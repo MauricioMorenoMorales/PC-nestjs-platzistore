@@ -1,0 +1,21 @@
+@host = http://localhost:3000/products
+
+### Post product
+POST {{host}}
+Content-Type: application/json
+
+{
+  "name": "lorem2 lorem lorem",
+  "description": "lorem2 lorem lorem",
+  "price": 1,
+  "stock": 1900,
+  "image": "https://i.imgur.com/U4iGx1j.jpeg",
+  "category": {
+    "name": "category a",
+    "image": "https://i.imgur.com/U4iGx1j.jpeg"
+  },
+  "brand": "62200b79915d3aa41676de01"
+}
+
+### GET Products
+GET {{host}}
