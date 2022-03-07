@@ -1,0 +1,11 @@
+@host = http://localhost:3000/users
+
+### Create user
+POST {{host}}
+Content-Type: application/json
+
+{
+  "email" : "admin3@email.com",
+  "password": "12345678",
+  "role": "admin3"
+}
