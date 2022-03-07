@@ -48,8 +48,9 @@ export class UsersService {
     return rta;
   }
 
-  public findByEmail(email: string) {
-    return this.userModel.findOne({ email }).exec();
+  public async findByEmail(email: string) {
+    const user = await this.userModel.findOne({ email }).exec();
+    return user;
   }
 
   public update(id: string, changes: UpdateUserDto) {

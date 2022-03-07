@@ -1,0 +1,19 @@
+@host = http://localhost:3000/auth
+
+### Autorizacion correcta
+POST {{ host }}/login
+Content-Type: application/json
+
+{
+  "email" : "admin4@email.com",
+  "password": "12345678"
+}
+
+### Autorizacion incorrecta
+POST {{ host }}/login
+Content-Type: application/json
+
+{
+  "email" : "admin4@email.com",
+  "password": "12345678"
+}

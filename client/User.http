@@ -5,7 +5,7 @@ POST {{host}}
 Content-Type: application/json
 
 {
-  "email" : "admin3@email.com",
+  "email" : "admin4@email.com",
   "password": "12345678",
   "role": "admin3"
 }
