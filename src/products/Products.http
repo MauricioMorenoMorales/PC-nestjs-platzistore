@@ -1,12 +1,14 @@
-@host = http://localhost:3000/products
+@Host = http://localhost:3000/products
+@ProductId = 62200b52bccdde650aa2ac8a
 
 ### Post product
-POST {{host}}
+POST {{ Host }}
 Content-Type: application/json
+Authorization: {{ JWTToken }}
 
 {
-  "name": "lorem2 lorem lorem",
-  "description": "lorem2 lorem lorem",
+  "name": "lorem3 lorem lorem",
+  "description": "lorem3 lorem lorem",
   "price": 1,
   "stock": 1900,
   "image": "https://i.imgur.com/U4iGx1j.jpeg",
@@ -18,4 +20,8 @@ Content-Type: application/json
 }
 
 ### GET Products
-GET {{host}}
+GET {{ Host }}
+
+### GET a single product with a given id
+GET {{ Host }}/{{ ProductId }}
+Authorization: {{ JWTToken }}
