@@ -26,9 +26,12 @@ import {
 } from '../dtos/products.dtos';
 import { ProductsService } from './../services/products.service';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { RolesGuard } from 'src/auth/guards/roles.guard';
 import { Public } from 'src/auth/decorators/public.decorator';
+import { Roles } from '../../auth/decorators/roles.decorator';
+import { Role } from '../../auth/models/roles.model';
 
-@UseGuards(JwtAuthGuard) // tambien puede ser @UseGuards(AuthGuard('jwt')) pero no permitira publicos
+@UseGuards(JwtAuthGuard, RolesGuard) // tambien puede ser @UseGuards(AuthGuard('jwt')) pero no permitira publicos
 @ApiTags('products')
 @Controller('products')
 export class ProductsController {
@@ -54,6 +57,7 @@ export class ProductsController {
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
+  @Roles(Role.ADMIN)
   public create(@Body() payload: CreateProductDto) {
     return this.productsService.create(payload);
   }

@@ -7,7 +7,7 @@ Content-Type: application/json
 Authorization: {{ JWTToken }}
 
 {
-  "name": "lorem3 lorem lorem",
+  "name": "lorem5 lorem4 lorem",
   "description": "lorem3 lorem lorem",
   "price": 1,
   "stock": 1900,
